@@ -13,7 +13,7 @@ class DealershipsController < ApplicationController
       if @dealership.save
         format.html { redirect_to dealership_url(@dealership), notice: "Dealership was successfully created." }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to dealerships_url }
       end
     end
   end
@@ -22,7 +22,7 @@ class DealershipsController < ApplicationController
     @dealership_to_destroy.destroy
 
     respond_to do |format|
-      format.html { redirect_to dealership_url(@dealership_to_destroy), notice: "Dealership was successfully destroyed." }
+      format.html { redirect_to dealerships_url, notice: "Dealership was successfully destroyed." }
     end
   end
 
