@@ -1,5 +1,5 @@
 class Car < ApplicationRecord
-  enum :condition, { new_condition: 'new', used_condition: 'used' }
+  enum :condition, { New: 'new',Used: 'used' }
 
   belongs_to :dealership
 

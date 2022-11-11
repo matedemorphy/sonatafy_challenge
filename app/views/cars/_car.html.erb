@@ -1,0 +1,10 @@
+<tr>
+	<td><%= car.make %></td>
+	<td><%= car.model %></td>
+	<td><%= car.condition %></td>
+	<td><%= car.price %></td>
+	<td><%= car.dealership.location %></td>
+	<% if current_user.admin? %>
+		<td><%= delete_confirm(car) %></td>
+	<% end %>
+</tr>

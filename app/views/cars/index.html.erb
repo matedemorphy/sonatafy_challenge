@@ -1,0 +1,23 @@
+<div class="container-fluid container-default">
+	<%= render "shared/title_jumbotron", {resource: "Car", title: "Cars" } %>
+	<%= render "shared/modal_form", {resource: "Car", model: @car } %>
+	<%= render "shared/success_message", message: notice %>
+	<%= render "devise/shared/error_messages", resource: @car %>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Make</th>
+				<th scope="col">Model</th>
+				<th scope="col">Condition</th>
+				<th scope="col">Price</th>
+				<th scope="col">Dealership</th>
+				<th scope="col">&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @cars.each do |car| %>
+				<%= render car %>
+			<% end %>
+		</tbody>
+	</table>
+</div>

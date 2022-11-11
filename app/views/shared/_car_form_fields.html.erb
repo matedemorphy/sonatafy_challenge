@@ -1,0 +1,34 @@
+<div class="form-floating">
+  <%= f.text_field :make, autocomplete: "make", class: "form-control", placeholder: "Make" %>
+  <%= f.label :make %>
+</div>
+<br/>
+
+<div class="form-floating">
+  <%= f.text_field :model, autocomplete: "model", class: "form-control", placeholder: "Model" %>
+  <%= f.label :model %>
+</div>
+<br/>
+
+<div class="form-floating">
+  <span>Condition:&nbsp;</span>
+  <div class="form-check form-check-inline">
+    <%= f.radio_button :condition, "New", class: "form-check-input", value: "new"%>
+    <%= f.label :New, "New" %>
+  </div>
+  <div class="form-check form-check-inline">
+    <%= f.radio_button :condition, "Used", class: "form-check-input", value: "used"%>
+    <%= f.label :Used, "Used" %>
+  </div>
+  </div>
+<br/>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">$</span>
+  <%= f.text_field :price, autocomplete: "price", class: "form-control", placeholder: "Price" %>
+</div>
+<br/>
+<div class="form-floating">
+  <%= f.select :dealership_id, Dealership.all.map {|dealership| [dealership.location, dealership.id]}, {prompt: "Select a Dealership"}, {class: "form-select"} %>
+</div>
+<br/>

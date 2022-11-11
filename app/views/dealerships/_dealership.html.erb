@@ -4,8 +4,8 @@
 	<td><%= dealership.phone_number %></td>
 	<td><%= dealership.cell_phone_number %></td>
 	<td><%= dealership.email %></td>
+	<td><%= dealership.cars.count %></td>
 	<% if current_user.admin? %>
-	<td><%= dealership.email %></td>
 	<td><%= delete_confirm(dealership) %></td>
 	<% end %>
 </tr>

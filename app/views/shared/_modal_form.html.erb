@@ -6,44 +6,22 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <%= form_with(model: dealership) do |f| %>
-        <% if dealership.errors.any? %>
+        <%= form_with(model: model) do |f| %>
+        <% if model.errors.any? %>
             <div style="color: red">
-            <h2><%= pluralize(dealership.errors.count, "error") %> prohibited this admin from being saved:</h2>
+            <h2><%= pluralize(model.errors.count, "error") %> prohibited this admin from being saved:</h2>
             <ul>
-                <% dealership.errors.each do |error| %>
+                <% model.errors.each do |error| %>
                 <li><%= error.full_message %></li>
                 <% end %>
             </ul>
             </div>
         <% end %>
-        <div class="form-floating">
-            <%= f.text_field :location, autocomplete: "location", class: "form-control", placeholder: "Location" %>
-            <%= f.label :location %>
-        </div>
-        <br/>
-
-        <div class="form-floating">
-            <%= f.text_field :address, autocomplete: "address", class: "form-control", placeholder: "Address" %>
-            <%= f.label :address %>
-        </div>
-        <br/>
-
-				<div class="form-floating">
-            <%= f.text_field :phone_number, autocomplete: "phone_number", class: "form-control", placeholder: "Phone number" %>
-            <%= f.label :phone_number %>
-        </div>
-        <br/>
-
-				<div class="form-floating">
-            <%= f.text_field :cell_phone_number, autocomplete: "cell_phone_number", class: "form-control", placeholder: "CellPhone number" %>
-            <%= f.label :cell_phone_number %>
-        </div>
-        <br/>
-				<div class="form-floating">
-            <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "Contact email" %>
-            <%= f.label :email %>
-        </div>
+        <% if controller.controller_name == 'dealerships' %>
+          <%= render "shared/dealership_form_fields", f: f %>
+        <% else %>
+          <%= render "shared/car_form_fields", f: f %>
+        <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
