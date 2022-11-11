@@ -53,3 +53,14 @@ main {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}

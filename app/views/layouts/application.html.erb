@@ -11,6 +11,11 @@
   </head>
 
   <body class="<%= 'auth-body text-center' if devise_controller? %>">
-    <%= yield %>
+    <div class="container-fluid">
+      <% if !devise_controller? %>
+        <%= render "shared/navbar" %>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
