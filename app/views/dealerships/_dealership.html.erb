@@ -1,0 +1,11 @@
+<tr>
+	<td><%= dealership.location %></td>
+	<td><%= dealership.address %></td>
+	<td><%= dealership.phone_number %></td>
+	<td><%= dealership.cell_phone_number %></td>
+	<td><%= dealership.email %></td>
+	<% if current_user.admin? %>
+	<td><%= dealership.email %></td>
+	<td><%= delete_confirm(dealership) %></td>
+	<% end %>
+</tr>

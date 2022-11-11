@@ -1,0 +1,22 @@
+<div class="container-fluid container-default">
+	<%= render "shared/title_jumbotron", {resource: "Dealership", title: "Dealerships" } %>
+	<%= render "shared/modal_form", {resource: "Dealership", dealership: @dealership } %>
+	<%= render "shared/success_message", message: notice %>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Location</th>
+				<th scope="col">Address</th>
+				<th scope="col">Phone Number</th>
+				<th scope="col">Cell Phone Number</th>
+				<th scope="col">Email</th>
+				<th scope="col">&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @dealerships.each do |dealership| %>
+				<%= render dealership %>
+			<% end %>
+		</tbody>
+	</table>
+</div>

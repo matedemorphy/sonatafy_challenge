@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="text-center">
+  <body class="<%= 'auth-body text-center' if devise_controller? %>">
     <%= yield %>
   </body>
 </html>
