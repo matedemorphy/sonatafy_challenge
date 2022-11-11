@@ -3,7 +3,7 @@ FactoryBot.define do
     make { "MyString" }
     model { "MyString" }
     condition { "new" }
-    price { 1 }
+    price { 100000000 }
     dealership
   end
 end

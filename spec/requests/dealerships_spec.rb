@@ -8,7 +8,7 @@ RSpec.describe "Dealerships", type: :request do
     context "html response" do
       it "returns all dealerships" do
         sign_in subject
-        get "/dealerships/index"
+        get "/dealerships"
         expect(assigns(:dealerships)).to eq(dealerships)
         expect(assigns(:dealership)).to be_an_instance_of(Dealership)
       end
